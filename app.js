@@ -58,7 +58,7 @@ app.get("/movies/", async (request, response) => {
 });
 
 app.post("/movies/", async (request, response) => {
-  const { movieDetails } = request.body;
+  const movieDetails = request.body;
   const { directorId, movieName, leadActor } = movieDetails;
   const insertMovieQuery = `
     INSERT INTO
@@ -88,7 +88,7 @@ app.get("/movies/:movieId/", async (request, response) => {
 
 app.put("/movies/:movieId/", async (request, response) => {
   const { movieId } = request.params;
-  const { movieDetails } = request.body;
+  const movieDetails = request.body;
   const { directorId, movieName, leadActor } = movieDetails;
   const updateMovieQuery = `
     UPDATE
